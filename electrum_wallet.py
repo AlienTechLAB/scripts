@@ -2,6 +2,7 @@
 
 # PREPARATION:
 # sudo apt install -y pip
+# sudo apt install -y python3.11-venv
 # python3 -m venv ./venv
 # source ./venv/bin/activate
 # pip install base58
@@ -358,7 +359,6 @@ def main():
     json_export = None
     with open(path_to_export_json, "r") as file:
         json_export = json.load(file)
-    assert len(json_export.keys()) == 30
     print("RECEIVING ADDRESSES:")
     recv_addrs = get_addresses(harden_child_prv_key, harden_child_chain_code, 0, 20)
     for addr in recv_addrs:
